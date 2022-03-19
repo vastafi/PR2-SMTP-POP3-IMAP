@@ -1,0 +1,400 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: "Montserrat";
+}
+section {
+    height: 100vh;
+    width: 100%;
+    background-color: aliceblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.container {
+    width: 90%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0px 0px 20px #00000010;
+    background-color: white;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+.form-group {
+    width: 100%;
+    margin-top: 20px;
+    font-size: 20px;
+}
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 5px;
+    font-size: 18px;
+    border: 1px solid rgba(128, 128, 128, 0.199);
+    margin-top: 5px;
+}
+
+textarea {
+    resize: vertical;
+}
+button[type="submit"] {
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 20px;
+    font-size: 24px;
+    border-radius: 8px;
+    font-family: "Montserrat";
+    color: rgb(27, 166, 247);
+    text-align: center;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: 0.3s ease background-color;
+}
+button[type="submit"]:hover {
+    background-color: rgb(214, 226, 236);
+}
+#status {
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    padding: 10px;
+    margin: 0 auto;
+    border-radius: 8px;
+}
+#status.success {
+    background-color: rgb(211, 250, 153);
+    animation: status 4s ease forwards;
+}
+#status.error {
+    background-color: rgb(250, 129, 92);
+    color: white;
+    animation: status 4s ease forwards;
+}
+@keyframes status {
+    0% {
+        opacity: 1;
+        pointer-events: all;
+    }
+    90% {
+        opacity: 1;
+        pointer-events: all;
+    }
+    100% {
+        opacity: 0;
+        pointer-events: none;
+    }
+}
+body{
+    margin-top:20px;
+    background:#eee;
+}
+/* EMAIL */
+.email {
+    padding: 20px 10px 15px 10px;
+    font-size: 1em;
+}
+.email .btn.search {
+    font-size: 0.9em;
+}
+.email h2 {
+    margin-top: 0;
+    padding-bottom: 8px;
+}
+.email .nav.nav-pills > li > a {
+    border-top: 3px solid transparent;
+}
+.email .nav.nav-pills > li > a > .fa {
+    margin-right: 5px;
+}
+.email .nav.nav-pills > li.active > a,
+.email .nav.nav-pills > li.active > a:hover {
+    background-color: #f6f6f6;
+    border-top-color: #3c8dbc;
+}
+.email .nav.nav-pills > li.active > a {
+    font-weight: 600;
+}
+.email .nav.nav-pills > li > a:hover {
+    background-color: #f6f6f6;
+}
+.email .nav.nav-pills.nav-stacked > li > a {
+    color: #666;
+    border-top: 0;
+    border-left: 3px solid transparent;
+    border-radius: 0px;
+}
+.email .nav.nav-pills.nav-stacked > li.active > a,
+.email .nav.nav-pills.nav-stacked > li.active > a:hover {
+    background-color: #f6f6f6;
+    border-left-color: #3c8dbc;
+    color: #444;
+}
+.email .nav.nav-pills.nav-stacked > li.header {
+    color: #777;
+    text-transform: uppercase;
+    position: relative;
+    padding: 0px 0 10px 0;
+}
+.email table {
+    font-weight: 600;
+}
+.email table a {
+    color: #666;
+}
+.email table tr.read > td {
+    background-color: #f6f6f6;
+}
+.email table tr.read > td {
+    font-weight: 400;
+}
+.email table tr td > i.fa {
+    font-size: 1.2em;
+    line-height: 1.5em;
+    text-align: center;
+}
+.email table tr td > i.fa-star {
+    color: #f39c12;
+}
+.email table tr td > i.fa-bookmark {
+    color: #e74c3c;
+}
+.email table tr > td.action {
+    padding-left: 0px;
+    padding-right: 2px;
+}
+.grid {
+    position: relative;
+    width: 100%;
+    background: #fff;
+    color: #666666;
+    border-radius: 2px;
+    margin-bottom: 25px;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
+}
+.grid .grid-header:after {
+    clear: both;
+}
+.grid .grid-header span,
+.grid .grid-header > .fa {
+    display: inline-block;
+    margin: 0;
+    font-weight: 300;
+    font-size: 1.5em;
+    float: left;
+}
+.grid .grid-header span {
+    padding: 0 5px;
+}
+.grid .grid-header > .fa {
+    padding: 5px 10px 0 0;
+}
+.grid .grid-header > .grid-tools {
+    padding: 4px 10px;
+}
+.grid .grid-header > .grid-tools a {
+    color: #999999;
+    padding-left: 10px;
+    cursor: pointer;
+}
+.grid .grid-header > .grid-tools a:hover {
+    color: #666666;
+}
+.grid .grid-body {
+    padding: 15px 20px 15px 20px;
+    font-size: 0.9em;
+    line-height: 1.9em;
+}
+.grid .full {
+    padding: 0 !important;
+}
+.grid .transparent {
+    box-shadow: none !important;
+    margin: 0px !important;
+    border-radius: 0px !important;
+}
+.grid.top.black > .grid-header {
+    border-top-color: #000000 !important;
+}
+.grid.bottom.black > .grid-body {
+    border-bottom-color: #000000 !important;
+}
+.grid.top.blue > .grid-header {
+    border-top-color: #007be9 !important;
+}
+.grid.bottom.blue > .grid-body {
+    border-bottom-color: #007be9 !important;
+}
+.grid.top.green > .grid-header {
+    border-top-color: #00c273 !important;
+}
+.grid.bottom.green > .grid-body {
+    border-bottom-color: #00c273 !important;
+}
+.grid.top.purple > .grid-header {
+    border-top-color: #a700d3 !important;
+}
+.grid.bottom.purple > .grid-body {
+    border-bottom-color: #a700d3 !important;
+}
+.grid.top.red > .grid-header {
+    border-top-color: #dc1200 !important;
+}
+.grid.bottom.red > .grid-body {
+    border-bottom-color: #dc1200 !important;
+}
+.grid.top.orange > .grid-header {
+    border-top-color: #f46100 !important;
+}
+.grid.bottom.orange > .grid-body {
+    border-bottom-color: #f46100 !important;
+}
+.grid.no-border > .grid-header {
+    border-bottom: 0px !important;
+}
+.grid.top > .grid-header {
+    border-top-width: 4px !important;
+    border-top-style: solid !important;
+}
+.grid.bottom > .grid-body {
+    border-bottom-width: 4px !important;
+    border-bottom-style: solid !important;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 100px;
+    /* Location of the box */
+    left: 0;   top: 0;   width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0,0,0);
+    /* Fallback color */
+    background-color: rgba(0,0,0,0.4);
+    /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover, .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+.label_file {
+    background-color: #002b82;
+    color: white;
+    padding: 0.5rem;
+    font-family: sans-serif;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+#file-chosen{
+    margin-left: 0.3rem;
+    font-family: sans-serif;
+}
+body {font-family: Arial, Helvetica, sans-serif;}
+
+/* The Modal (background) */
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 100px;
+    /* Location of the box */
+    left: 0;   top: 0;   width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0,0,0);
+    /* Fallback color */
+    background-color: rgba(0,0,0,0.4);
+    /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover, .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+.label_file {
+    background-color: indigo;
+    color: white;
+    padding: 0.5rem;
+    font-family: sans-serif;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+#file-chosen{
+    margin-left: 0.3rem;
+    font-family: sans-serif;
+}
+label {
+    background-color: indigo;
+    color: white;
+    padding: 0.5rem;
+    font-family: sans-serif;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+#file-chosen{
+    margin-left: 0.3rem;
+    font-family: sans-serif;
+}
