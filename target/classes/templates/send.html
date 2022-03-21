@@ -1,19 +1,16 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <html lang="en">
 <head>
-    <link href="../styles.css" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <title>Message</title>
-
 </head>
 <body>
 <section>
     <img src="https://t4.ftcdn.net/jpg/04/42/09/11/360_F_442091153_iwci64DVSlumZalvBMqkmlGAKMShswvV.jpg" align="right" width="1000" height="600">
-
     <div class="container">
-<br>
+        <br>
         <br>
     <form th:method="POST" th:action="@{/}" th:object="${mail}" class="form-container">
       <h1 >Send Message</h1>
@@ -29,7 +26,6 @@
         </div>
         <label for="message"><b>Message</b></label>
         <br>
-
         <textarea  th:field="*{message}" placeholder="Enter message" name="message" id="message" required></textarea>
         <br>
         <input type="file" id="actual-btn" hidden/>
@@ -47,19 +43,16 @@
             <p>Succes</p>
         </div>
     </div>
-<a href="/inbox">Open Inbox</a>
-    </div>
+        <a href="/inbox">Open Inbox</a>
+     </div>
    </section>
 </body>
 <script>
     var modal = document.getElementById("myModal");
     var btn = document.getElementById("myBtn");
     var span = document.getElementsByClassName("close")[0];
-
     btn.onclick = function() {   modal.style.display = "block"; }
-
     span.onclick = function() {   modal.style.display = "none"; }
-
     window.onclick = function(event) {
         if (event.target == modal) {
             modal.style.display = "none";
@@ -80,6 +73,5 @@
             fileChosen.value = this.files[0].name;
         }
     })
-
 </script>
 </html>

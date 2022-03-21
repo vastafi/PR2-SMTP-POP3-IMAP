@@ -16,43 +16,43 @@ import java.util.List;
 
 @Controller()
 public class GmailController {
-    private final GmailService mailService;
+    private final GmailService gmailService;
 
-    public GmailController(GmailService mailService) {
-        this.mailService = mailService;
+    public GmailController(GmailService gmailService) {
+        this.gmailService = gmailService;
     }
 
     @GetMapping
-    public String newM(Model mail) {
-        mail.addAttribute("mail", new Gmail());
+    public String newM(Model gmail) {
+        gmail.addAttribute("mail", new Gmail());
         return "send";
     }
 
     @GetMapping("inbox")
-    public String showInbox(Model mail) throws Exception {
+    public String showInbox(Model gmail) throws Exception {
 
-        List<GmailMessage> messageList = mailService.getListM();
-        mail.addAttribute("messageList", messageList);
+        List<GmailMessage> messageList = gmailService.getListM();
+        gmail.addAttribute("messageList", messageList);
         return "inbox";
     }
 
     @GetMapping("inbox/message/{id}")
-    public String showM(@PathVariable(value = "id") int id, Model mail) throws Exception {
-        List<GmailMessage> messageList = mailService.getListM();
+    public String showM(@PathVariable(value = "id") int id, Model gmail) throws Exception {
+        List<GmailMessage> messageList = gmailService.getListM();
         GmailMessage message = messageList.get(id);
-        mail.addAttribute("message", message);
+        gmail.addAttribute("message", message);
         return "show";
     }
 
     @PostMapping
-    public String sendMessage(@ModelAttribute("mail") Gmail mail) throws MessagingException, IOException {
-        System.out.println(mail.getSubject() + " " + mail.getMessage() + " " + mail.getAttachment());
-        mailService.setGmail(mail);
+    public String sendM(@ModelAttribute("mail") Gmail gmail) throws MessagingException, IOException {
+        System.out.println(gmail.getSubject() + " " + gmail.getMessage() + " " + gmail.getAttachment());
+        gmailService.setGmail(gmail);
 
-        if (mail.getAttachment().equals("")) {
-            mailService.sendM();
+        if (gmail.getAttachment().equals("")) {
+            gmailService.sendM();
         } else {
-            mailService.sendMwithAttachment();
+            gmailService.sendMwithAttachment();
         }
         return "redirect:/inbox";
     }

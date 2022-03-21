@@ -30,12 +30,11 @@ public class GmailService {
 
     public void sendM() {
 
-        SimpleMailMessage msg = new SimpleMailMessage();
-        msg.setTo(gmail.getTo());
-        msg.setSubject(gmail.getSubject());
-        msg.setText(gmail.getMessage());
-
-        mailSender.send(msg);
+        SimpleMailMessage message = new SimpleMailMessage();
+        message.setTo(gmail.getTo());
+        message.setSubject(gmail.getSubject());
+        message.setText(gmail.getMessage());
+        mailSender.send(message);
 
     }
 
@@ -43,11 +42,11 @@ public class GmailService {
 
         MimeMessage message = mailSender.createMimeMessage();
 
-        MimeMessageHelper helper = new MimeMessageHelper(message, true);
-        helper.setTo(gmail.getTo());
-        helper.setSubject(gmail.getSubject());
-        helper.setText(gmail.getMessage());
-        helper.addAttachment(gmail.getAttachment(), new ClassPathResource(gmail.getAttachment()));
+        MimeMessageHelper messageHelper = new MimeMessageHelper(message, true);
+        messageHelper.setTo(gmail.getTo());
+        messageHelper.setSubject(gmail.getSubject());
+        messageHelper.setText(gmail.getMessage());
+        messageHelper.addAttachment(gmail.getAttachment(), new ClassPathResource(gmail.getAttachment()));
         mailSender.send(message);
     }
 

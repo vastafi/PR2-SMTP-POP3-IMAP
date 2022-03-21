@@ -4,18 +4,14 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <title>Inbox</title>
-
-        <link href="../styles.css" rel="stylesheet" type="text/css"/>
-
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
 <div class="container">
     <div class="row">
-        <!-- BEGIN INBOX -->
-        <div class="col-md-12">
+         <div class="col-md-12">
             <div class="grid email">
                 <div class="grid-body">
                     <div class="row">
-                        <!-- BEGIN INBOX MENU -->
                         <div class="col-md-3">
                             <h2 class="grid-title"><i class="fa fa-inbox"></i> Inbox</h2>
                             <a class="btn btn-block btn-primary" data-toggle="modal" data-target="#compose-modal"><i class="fa fa-pencil"  href="/new"></i>NEW MESSAGE</a>
@@ -23,13 +19,17 @@
                         </div>
                     </div>
 
-<div class="list-group" th:each="email : ${messageList}">
-    <a th:href="@{/inbox/message/{id}(id=${email.id})}" class="list-group-item list-group-item-action">
-        <p th:text="${email.subject}"/>
-        <p th:text="${email.sender}"/>
-    </a>
-    <br>
+                         <div class="list-group" th:each="email : ${messageList}">
+                            <a th:href="@{/inbox/message/{id}(id=${email.id})}" class="list-group-item list-group-item-action">
+                                  <p th:text="${email.subject}"/>
+                                  <p th:text="${email.sender}"/>
+                             </a>
+                         <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-
 </body>
 </html>
