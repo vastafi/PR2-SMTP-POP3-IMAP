@@ -57,7 +57,7 @@ public class GmailService {
 
             Session session = Session.getDefaultInstance(props, null);
             store = session.getStore("imaps");
-            store.connect("imap.gmail.com","@gmail.com", "password");
+            store.connect("imap.gmail.com","", "");
             folder = store.getFolder("Inbox");
 
             folder.open(Folder.READ_WRITE);
