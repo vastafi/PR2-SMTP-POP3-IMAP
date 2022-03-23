@@ -30,7 +30,6 @@ public class GmailController {
 
     @GetMapping("inbox")
     public String showInbox(Model gmail) throws Exception {
-
         List<GmailMessage> messageList = gmailService.getListM();
         gmail.addAttribute("messageList", messageList);
         return "inbox";

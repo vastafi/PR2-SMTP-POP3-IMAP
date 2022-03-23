@@ -29,19 +29,15 @@ public class GmailService {
     private JavaMailSender mailSender;
 
     public void sendM() {
-
         SimpleMailMessage message = new SimpleMailMessage();
         message.setTo(gmail.getTo());
         message.setSubject(gmail.getSubject());
         message.setText(gmail.getMessage());
         mailSender.send(message);
-
     }
 
     public void sendMwithAttachment() throws MessagingException, IOException {
-
         MimeMessage message = mailSender.createMimeMessage();
-
         MimeMessageHelper messageHelper = new MimeMessageHelper(message, true);
         messageHelper.setTo(gmail.getTo());
         messageHelper.setSubject(gmail.getSubject());
@@ -49,7 +45,6 @@ public class GmailService {
         messageHelper.addAttachment(gmail.getAttachment(), new ClassPathResource(gmail.getAttachment()));
         mailSender.send(message);
     }
-
 
     public List<GmailMessage> getListM() throws MessagingException {
         Folder folder = null;
@@ -62,7 +57,7 @@ public class GmailService {
 
             Session session = Session.getDefaultInstance(props, null);
             store = session.getStore("imaps");
-            store.connect("imap.gmail.com","astafivalentina2@gmail.com", "val19981010");
+            store.connect("imap.gmail.com","@gmail.com", "password");
             folder = store.getFolder("Inbox");
 
             folder.open(Folder.READ_WRITE);
@@ -77,8 +72,12 @@ public class GmailService {
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
-            if (folder != null) { folder.close(true); }
-            if (store != null) { store.close(); }
+            if (folder != null) {
+                folder.close(true);
+            }
+            if (store != null) {
+                store.close();
+            }
         }
         return messageList;
     }
